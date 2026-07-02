@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Archivo', sans-serif;
+    background-color: #F7F5E1;
+  }
+}
+
+.font-youngserif {
+  font-family: 'Young Serif', serif;
+}
+
+.font-caveat {
+  font-family: 'Caveat Brush', cursive;
+}
+
+.font-archivo {
+  font-family: 'Archivo', sans-serif;
+}
+
+.font-boogaloo {
+  font-family: 'Boogaloo', sans-serif;
+}
+
+.font-newsreader {
+  font-family: 'Newsreader', serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+@layer utilities {
+  /* Dynamic folding transition */
+  .fold-half-top {
+    transform-origin: bottom;
+    animation: foldTop 1.5s forwards ease-in-out;
+  }
+  
+  .fold-half-bottom {
+    transform-origin: top;
+    animation: foldBottom 1.5s forwards ease-in-out;
+  }
+
+  /* Sliding down into envelope */
+  .slide-down-into {
+    animation: slideDown 1.8s infinite ease-in-out;
+  }
+
+  /* Pulsing glow for Send button */
+  .glow-pulse {
+    animation: glowPulse 2s infinite ease-in-out;
+  }
+}
+
+@keyframes foldTop {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-120deg) scaleY(0.9);
+    opacity: 0.8;
+  }
+}
+
+@keyframes foldBottom {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(120deg) scaleY(0.9);
+    opacity: 0.8;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-80px) scale(0.9);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(20px) scale(0.95);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(60px) scale(0.85);
+    opacity: 0;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0px rgba(255, 46, 147, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px 8px rgba(255, 46, 147, 0.3);
+  }
+}
