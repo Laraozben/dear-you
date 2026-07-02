@@ -66,12 +66,29 @@ const StickerIcon = ({ id, className = "w-12 h-12" }) => {
       );
     case 'match':
       return (
-        <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3">
-          <rect x="22" y="32" width="46" height="32" rx="3" fill="currentColor" fillOpacity="0.2" />
-          <rect x="36" y="36" width="38" height="32" rx="3" />
-          <line x1="72" y1="50" x2="82" y2="50" strokeWidth="4" />
-          <circle cx="82" cy="50" r="2.5" fill="currentColor" />
-          <text x="26" y="52" fontSize="7" fontWeight="black" fill="currentColor" stroke="none" fontFamily="sans-serif">MATCH</text>
+        <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+          {/* Main outer sleeve */}
+          <rect x="18" y="32" width="46" height="30" rx="4" fill="currentColor" fillOpacity="0.1" />
+          {/* Striking surface grid pattern on the side */}
+          <line x1="18" y1="39" x2="64" y2="39" strokeDasharray="3 3" />
+          <line x1="18" y1="55" x2="64" y2="55" strokeDasharray="3 3" />
+          
+          {/* Inner drawer sliding out slightly to the right */}
+          <path d="M64,36 L78,36 L78,58 L64,58" />
+          {/* Match stick inside the drawer */}
+          <line x1="68" y1="47" x2="76" y2="47" />
+          <circle cx="76" cy="47" r="2.5" fill="currentColor" />
+
+          {/* Struck match stick lying next to it, set on fire */}
+          <line x1="22" y1="74" x2="52" y2="74" strokeWidth="3.5" />
+          <circle cx="52" cy="74" r="3" fill="currentColor" />
+          {/* Flame from the match head */}
+          <path d="M52,74 C58,69 56,58 52,53 C48,58 46,69 52,74 Z" fill="currentColor" fillOpacity="0.3" strokeWidth="2.5" />
+          <path d="M50,68 C53,65 52,60 50,57 C48,60 47,65 50,68 Z" fill="#E20019" />
+          
+          {/* Cute label on the cover */}
+          <path d="M26,42 C33,39 48,39 55,42" />
+          <path d="M30,50 C36,52 46,52 51,50" />
         </svg>
       );
     case 'wine':
@@ -312,35 +329,35 @@ const generateStickerDetails = (stickerId) => {
 function BackgroundDecorations() {
   return (
     <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-      <svg className="absolute w-24 h-24 left-[5%] top-[8%] opacity-35 stroke-[#E11D48]" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+      <svg className="absolute w-24 h-24 left-[5%] top-[8%] opacity-35 stroke-[#E11D48] animate-float-slow" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
-      <svg className="absolute w-16 h-16 left-[40%] top-[4%] opacity-30 stroke-[#E11D48]" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+      <svg className="absolute w-16 h-16 left-[40%] top-[4%] opacity-30 stroke-[#E11D48] animate-float-medium" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M20.893 13.393l-1.135-1.135a2.25 2.25 0 01-2.25-2.25V7.5a2.25 2.25 0 00-2.25-2.25h-.75a2.25 2.25 0 00-2.25 2.25v2.508a2.25 2.25 0 01-2.25 2.25l-1.135 1.135" />
       </svg>
-      <svg className="absolute w-20 h-20 left-[75%] top-[6%] opacity-35 stroke-[#E11D48]" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+      <svg className="absolute w-20 h-20 left-[75%] top-[6%] opacity-35 stroke-[#E11D48] animate-float-fast" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
         <circle cx="12" cy="12" r="3" />
         <path d="M12 5a3 3 0 00-3 3M12 5a3 3 0 013 3M12 19a3 3 0 00-3-3M12 19a3 3 0 013-3M5 12a3 3 0 003-3M5 12a3 3 0 013 3M19 12a3 3 0 00-3-3M19 12a3 3 0 013 3" />
       </svg>
-      <svg className="absolute w-24 h-28 left-[3%] top-[45%] opacity-30 stroke-[#E11D48]" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+      <svg className="absolute w-24 h-28 left-[3%] top-[45%] opacity-30 stroke-[#E11D48] animate-float-medium" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V9a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2z" />
       </svg>
-      <svg className="absolute w-20 h-20 right-[5%] top-[40%] opacity-35 stroke-[#E11D48]" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+      <svg className="absolute w-20 h-20 right-[5%] top-[40%] opacity-35 stroke-[#E11D48] animate-float-slow" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
-      <svg className="absolute w-36 h-36 left-[4%] bottom-[5%] opacity-35 stroke-[#E11D48]" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+      <svg className="absolute w-36 h-36 left-[4%] bottom-[5%] opacity-35 stroke-[#E11D48] animate-float-slow" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
         <circle cx="12" cy="12" r="4" />
         <path d="M12 2a4 4 0 00-4 4v1a4 4 0 004-4zm0 20a4 4 0 00-4-4v-1a4 4 0 004 4zM2 12a4 4 0 004-4h1a4 4 0 00-4 4zm20 0a4 4 0 00-4-4h-1a4 4 0 004 4z" />
       </svg>
-      <svg className="absolute w-28 h-28 right-[4%] bottom-[6%] opacity-35 stroke-[#E11D48]" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+      <svg className="absolute w-28 h-28 right-[4%] bottom-[6%] opacity-35 stroke-[#E11D48] animate-float-fast" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
         <circle cx="12" cy="12" r="9" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h8m-4-4v8" />
       </svg>
-      <span className="absolute text-rose-500/20 text-xl left-[15%] top-[25%]">✦</span>
-      <span className="absolute text-rose-500/20 text-2xl left-[85%] top-[28%]">✦</span>
-      <span className="absolute text-rose-500/20 text-lg left-[25%] bottom-[20%]">♡</span>
-      <span className="absolute text-rose-500/20 text-2xl right-[22%] bottom-[25%]">♡</span>
-      <span className="absolute text-rose-500/20 text-xs font-bold right-[30%] bottom-[8%] font-archivo tracking-widest uppercase">Sending You Love</span>
+      <span className="absolute text-rose-500/20 text-xl left-[15%] top-[25%] animate-twinkle">✦</span>
+      <span className="absolute text-rose-500/20 text-2xl left-[85%] top-[28%] animate-twinkle" style={{ animationDelay: '0.6s' }}>✦</span>
+      <span className="absolute text-rose-500/20 text-lg left-[25%] bottom-[20%] animate-float-fast">♡</span>
+      <span className="absolute text-rose-500/20 text-2xl right-[22%] bottom-[25%] animate-float-medium">♡</span>
+      <span className="absolute text-rose-500/20 text-xs font-bold right-[30%] bottom-[8%] font-archivo tracking-widest uppercase animate-float-slow">Sending You Love</span>
     </div>
   );
 }
@@ -530,6 +547,13 @@ function App() {
   const handleDeleteSticker = (stickerId, e) => {
     e.stopPropagation();
     setPlacedStickers(placedStickers.filter(s => s.id !== stickerId));
+  };
+
+  const handleRotateSticker = (stickerId, e) => {
+    e.stopPropagation();
+    setPlacedStickers(placedStickers.map(s => 
+      s.id === stickerId ? { ...s, rotate: (s.rotate + 15) % 360 } : s
+    ));
   };
 
   // Sticker dragging mouse/touch handlers
@@ -863,6 +887,14 @@ function App() {
                         title="Delete Sticker"
                       >
                         ×
+                      </button>
+                      {/* Rotate icon badge */}
+                      <button
+                        onClick={(e) => handleRotateSticker(sticker.id, e)}
+                        className="absolute -bottom-3.5 -right-3.5 w-6 h-6 rounded-full bg-white border border-black text-black text-[11px] flex items-center justify-center font-bold shadow-sm opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer z-30"
+                        title="Rotate Sticker"
+                      >
+                        ↻
                       </button>
                       <StickerIcon id={sticker.stickerId} className="w-12 h-12 text-rose-500 pointer-events-none" />
                     </div>
