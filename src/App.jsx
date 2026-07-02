@@ -849,7 +849,7 @@ function App() {
                       key={sticker.id}
                       onMouseDown={(e) => handlePointerDown(sticker.id, e)}
                       onTouchStart={(e) => handlePointerDown(sticker.id, e)}
-                      className="absolute bg-white p-2.5 border-2 border-black rounded-2xl shadow-[3px_3px_0px_rgba(0,0,0,1)] select-none cursor-grab active:cursor-grabbing hover:scale-105 transition-transform z-20 group"
+                      className="absolute bg-transparent p-2.5 border-2 border-transparent hover:border-dashed hover:border-black/35 hover:bg-black/5 rounded-2xl select-none cursor-grab active:cursor-grabbing hover:scale-105 transition-all duration-200 z-20 group"
                       style={{
                         left: `${sticker.x}%`,
                         top: `${sticker.y}%`,
@@ -1252,7 +1252,7 @@ function App() {
               {placedStickers.map((sticker) => (
                 <div
                   key={sticker.id}
-                  className="absolute bg-white p-1.5 border-2 border-black rounded-xl shadow-[2px_2px_0px_rgba(0,0,0,1)] select-none pointer-events-none"
+                  className="absolute bg-transparent p-0 select-none pointer-events-none"
                   style={{
                     left: `${sticker.x}%`,
                     top: `${sticker.y}%`,
