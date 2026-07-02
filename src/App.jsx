@@ -604,7 +604,64 @@ function App() {
       {/* SCREEN 1: LANDING PAGE */}
       {currentStep === 'landing' && (
         <div className="w-full max-w-[1440px] min-h-[1024px] pb-28 bg-[#F6F5E1] flex flex-col justify-start items-center relative animate-fadeIn">
-          {/* Minimal background decorations removed */}
+          {/* Animated Doodle Hearts & Stars for movement */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
+            {/* Top Left: Large Floating Heart */}
+            <div className="absolute left-[8%] top-[10%] animate-float-slow text-[#FF59B8] opacity-60">
+              <svg className="w-16 h-16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M12 6C10.5 3.5 6 3.5 4.5 6C3 8.5 4.5 13 12 19C19.5 13 21 8.5 19.5 6C18 3.5 13.5 3.5 12 6Z" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+
+            {/* Top Right: Twinkling Doodle Star */}
+            <div className="absolute right-[10%] top-[12%] animate-twinkle text-[#E20019] opacity-50">
+              <svg className="w-14 h-14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M12 3c.5 3.5 2.5 5.5 6 6-3.5.5-5.5 2.5-6 6-.5-3.5-2.5-5.5-6-6 3.5-.5 5.5-2.5 6-6z" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+
+            {/* Near Header Left: Sparkle Star */}
+            <div className="absolute left-[20%] top-[25%] animate-twinkle text-[#FF59B8] opacity-70" style={{ animationDelay: '0.5s' }}>
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                <path d="M12 3c.5 3.5 2.5 5.5 6 6-3.5.5-5.5 2.5-6 6-.5-3.5-2.5-5.5-6-6 3.5-.5 5.5-2.5 6-6z" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+
+            {/* Near Header Right: Tiny Heart */}
+            <div className="absolute right-[18%] top-[28%] animate-float-fast text-[#E20019] opacity-60">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                <path d="M12 6C10.5 3.5 6 3.5 4.5 6C3 8.5 4.5 13 12 19C19.5 13 21 8.5 19.5 6C18 3.5 13.5 3.5 12 6Z" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+
+            {/* Middle Left: Medium Twinkling Star */}
+            <div className="absolute left-[5%] top-[48%] animate-twinkle text-[#E20019] opacity-40" style={{ animationDelay: '1.2s' }}>
+              <svg className="w-12 h-12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M12 3 L14.5 8.5 L20.5 9 L16 13.5 L17.5 19.5 L12 16.5 L6.5 19.5 L8 13.5 L3.5 9 L9.5 8.5 Z" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+
+            {/* Middle Right: Floating Medium Heart */}
+            <div className="absolute right-[6%] top-[45%] animate-float-medium text-[#FF59B8] opacity-65">
+              <svg className="w-14 h-14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M12 6C10.5 3.5 6 3.5 4.5 6C3 8.5 4.5 13 12 19C19.5 13 21 8.5 19.5 6C18 3.5 13.5 3.5 12 6Z" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+
+            {/* Bottom Left: Twinkling Sparkle */}
+            <div className="absolute left-[10%] bottom-[18%] animate-twinkle text-[#FF59B8] opacity-50" style={{ animationDelay: '0.8s' }}>
+              <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                <path d="M12 3c.5 3.5 2.5 5.5 6 6-3.5.5-5.5 2.5-6 6-.5-3.5-2.5-5.5-6-6 3.5-.5 5.5-2.5 6-6z" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+
+            {/* Bottom Right: Floating Doodle Heart */}
+            <div className="absolute right-[12%] bottom-[16%] animate-float-slow text-[#E20019] opacity-60">
+              <svg className="w-12 h-12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M12 6C10.5 3.5 6 3.5 4.5 6C3 8.5 4.5 13 12 19C19.5 13 21 8.5 19.5 6C18 3.5 13.5 3.5 12 6Z" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+          </div>
 
           {/* Heading */}
           <div className="self-stretch pt-40 pb-24 relative flex flex-col justify-start items-center gap-8">
@@ -707,9 +764,9 @@ function App() {
                   }
                   setCurrentStep('preview');
                 }}
-                className="px-5 py-2.5 bg-rose-500 rounded-[100px] shadow-[0px_4px_12px_0px_rgba(232,50,90,0.33)] outline outline-[1.50px] outline-offset-[-1.50px] outline-rose-200 flex justify-start items-center gap-2 hover:bg-rose-600 transition-colors cursor-pointer"
+                className="px-5 py-2 bg-white/10 rounded-[100px] border border-white/20 flex justify-start items-center gap-2 hover:bg-white/20 transition-colors text-white text-base font-normal font-youngserif cursor-pointer"
               >
-                <div className="justify-start text-white text-lg font-normal font-youngserif">{t.sendBtn}</div>
+                {t.previewBtn}
               </button>
             </div>
           </div>
@@ -1155,7 +1212,7 @@ function App() {
                     const body = encodeURIComponent(`Greeting: ${greeting}\n\n${letterText}\n\nFrom, ${senderName}`);
                     window.location.href = `mailto:?subject=${subject}&body=${body}`;
                   }}
-                  className="self-stretch mt-3 px-6 py-4 bg-blue-600 rounded-2xl shadow-[0px_4px_8px_0px_rgba(0,0,50,0.2)] outline outline-[1.50px] outline-offset-[-1.50px] outline-blue-200 inline-flex justify-center items-center gap-2.5 hover:bg-blue-700 transition-colors uppercase text-white text-lg font-normal font-youngserif cursor-pointer"
+                  className="self-stretch mt-3 px-6 py-4 bg-rose-500 rounded-2xl shadow-[0px_6px_16px_0px_rgba(232,50,90,0.31)] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.13)] outline outline-[1.50px] outline-offset-[-1.50px] outline-rose-200 inline-flex justify-center items-center gap-2.5 hover:bg-rose-600 transition-colors uppercase text-white text-lg font-normal font-youngserif cursor-pointer"
                 >
                   {t.sendEmailBtn || 'Send Email'}
                 </button>
