@@ -16,12 +16,52 @@ const StickerIcon = ({ id, className = "w-12 h-12" }) => {
       );
     case 'bow':
       return (
-        <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
-          <path d="M50,50 C32,32 22,46 50,50 Z" fill="currentColor" fillOpacity="0.2" />
-          <path d="M50,50 C68,32 78,46 50,50 Z" fill="currentColor" fillOpacity="0.2" />
-          <circle cx="50" cy="50" r="5" fill="currentColor" />
-          <path d="M48,52 C38,68 32,82 28,88" strokeLinecap="round" />
-          <path d="M52,52 C62,68 68,82 72,88" strokeLinecap="round" />
+        <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+          {/* Left loop */}
+          <path d="M50,50 C25,25 12,48 50,50 Z" fill="currentColor" fillOpacity="0.15" strokeWidth="3.5" />
+          {/* Right loop */}
+          <path d="M50,50 C75,25 88,48 50,50 Z" fill="currentColor" fillOpacity="0.15" strokeWidth="3.5" />
+          {/* Inner loops detail */}
+          <path d="M50,50 C38,38 32,45 50,50" strokeWidth="1.8" />
+          <path d="M50,50 C62,38 68,45 50,50" strokeWidth="1.8" />
+          {/* Center knot */}
+          <rect x="45" y="45" width="10" height="10" rx="3.5" fill="currentColor" strokeWidth="3.5" />
+          {/* Left ribbon tail */}
+          <path d="M46,54 C35,68 25,82 15,86 C22,80 25,72 26,62" fill="currentColor" fillOpacity="0.05" />
+          {/* Right ribbon tail */}
+          <path d="M54,54 C65,68 75,82 85,86 C78,80 75,72 74,62" fill="currentColor" fillOpacity="0.05" />
+        </svg>
+      );
+    case 'heart_doodle':
+      return (
+        <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M50,30 C45,15 20,15 15,35 C10,55 35,75 50,85 C65,75 90,55 85,35 C80,15 55,15 50,30 Z" fill="currentColor" fillOpacity="0.2" />
+          <path d="M42,40 C35,32 25,35 22,45" strokeWidth="2" />
+        </svg>
+      );
+    case 'heart_double':
+      return (
+        <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M42,32 C37,18 15,18 10,36 C5,54 28,72 42,82 C56,72 79,54 74,36 C69,18 47,18 42,32 Z" fill="currentColor" fillOpacity="0.15" />
+          <path d="M68,26 C64,15 48,15 44,28 C40,41 58,54 68,62 C78,54 96,41 92,28 C88,15 72,15 68,26 Z" fill="currentColor" fillOpacity="0.25" strokeWidth="3" />
+        </svg>
+      );
+    case 'heart_sparkle':
+      return (
+        <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M45,35 C40,22 18,22 14,38 C10,54 32,72 45,82 C58,72 80,54 76,38 C72,22 50,22 45,35 Z" fill="currentColor" fillOpacity="0.2" />
+          <path d="M80,20c.3 2 1.3 3 3 3.3-2 .3-3 1.3-3.3 3-.3-2-1.3-3-3-3.3 2-.3 3-1.3 3.3-3z" strokeWidth="2" />
+          <path d="M22,70c.2 1.2.8 1.8 1.8 2-1.2.2-1.8.8-2 1.8-.2-1.2-.8-1.8-1.8-2 1.2-.2 1.8-.8 2-1.8z" strokeWidth="1.5" />
+          <path d="M85,55c.2 1.2.8 1.8 1.8 2-1.2.2-1.8.8-2 1.8-.2-1.2-.8-1.8-1.8-2 1.2-.2 1.8-.8 2-1.8z" strokeWidth="1.5" />
+        </svg>
+      );
+    case 'heart_arrow':
+      return (
+        <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M50,32 C45,18 22,18 17,36 C12,54 35,72 50,82 C65,72 88,54 83,36 C78,18 55,18 50,32 Z" fill="currentColor" fillOpacity="0.2" />
+          <line x1="12" y1="78" x2="88" y2="22" strokeWidth="4.5" />
+          <path d="M80,20 L90,20 L90,30" strokeWidth="4" />
+          <path d="M12,78 L8,84 M16,74 L10,80 M20,70 L14,76" strokeWidth="3" />
         </svg>
       );
     case 'discoball':
@@ -44,17 +84,6 @@ const StickerIcon = ({ id, className = "w-12 h-12" }) => {
           <path d="M68,42 C88,38 92,48 82,58 C92,60 88,68 74,62" />
         </svg>
       );
-    case 'cupid':
-      return (
-        <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3">
-          <circle cx="50" cy="28" r="8" />
-          <path d="M42,30 C25,20 28,42 42,38" />
-          <path d="M58,30 C75,20 72,42 58,38" />
-          <path d="M46,38 L42,70 L58,70 L54,38 Z" fill="currentColor" fillOpacity="0.2" />
-          <path d="M28,52 C28,44 36,44 36,52" />
-          <line x1="32" y1="48" x2="46" y2="48" />
-        </svg>
-      );
     case 'swans':
       return (
         <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
@@ -62,51 +91,6 @@ const StickerIcon = ({ id, className = "w-12 h-12" }) => {
           <path d="M62,62 C62,45 54,36 51,45 C49,48 54,62 62,62 Z" fill="currentColor" fillOpacity="0.2" />
           <path d="M22,62 C22,58 32,54 38,62" />
           <path d="M78,62 C78,58 68,54 62,62" />
-        </svg>
-      );
-    case 'match':
-      return (
-        <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-          {/* Main outer sleeve */}
-          <rect x="18" y="32" width="46" height="30" rx="4" fill="currentColor" fillOpacity="0.1" />
-          {/* Striking surface grid pattern on the side */}
-          <line x1="18" y1="39" x2="64" y2="39" strokeDasharray="3 3" />
-          <line x1="18" y1="55" x2="64" y2="55" strokeDasharray="3 3" />
-          
-          {/* Inner drawer sliding out slightly to the right */}
-          <path d="M64,36 L78,36 L78,58 L64,58" />
-          {/* Match stick inside the drawer */}
-          <line x1="68" y1="47" x2="76" y2="47" />
-          <circle cx="76" cy="47" r="2.5" fill="currentColor" />
-
-          {/* Struck match stick lying next to it, set on fire */}
-          <line x1="22" y1="74" x2="52" y2="74" strokeWidth="3.5" />
-          <circle cx="52" cy="74" r="3" fill="currentColor" />
-          {/* Flame from the match head */}
-          <path d="M52,74 C58,69 56,58 52,53 C48,58 46,69 52,74 Z" fill="currentColor" fillOpacity="0.3" strokeWidth="2.5" />
-          <path d="M50,68 C53,65 52,60 50,57 C48,60 47,65 50,68 Z" fill="#E20019" />
-          
-          {/* Cute label on the cover */}
-          <path d="M26,42 C33,39 48,39 55,42" />
-          <path d="M30,50 C36,52 46,52 51,50" />
-        </svg>
-      );
-    case 'wine':
-      return (
-        <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
-          <path d="M44,22 L56,22 L56,35 L64,45 L64,80 L36,80 L36,45 L44,35 Z" fill="currentColor" fillOpacity="0.2" />
-          <circle cx="50" cy="38" r="3" fill="currentColor" />
-          <path d="M46,38 C40,32 40,44 46,38" />
-          <path d="M54,38 C60,32 60,44 54,38" />
-        </svg>
-      );
-    case 'cocktail':
-      return (
-        <svg className={className} viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
-          <path d="M28,28 L72,28 L50,52 Z" fill="currentColor" fillOpacity="0.2" />
-          <line x1="50" y1="52" x2="50" y2="76" />
-          <line x1="38" y1="76" x2="62" y2="76" />
-          <circle cx="50" cy="35" r="4" fill="currentColor" />
         </svg>
       );
     case 'xoxo':
@@ -123,15 +107,15 @@ const StickerIcon = ({ id, className = "w-12 h-12" }) => {
 };
 
 const FIGMA_STICKERS = [
-  { id: 'match', label: 'Matchbox' },
   { id: 'bow', label: 'Ribbon Bow' },
+  { id: 'heart_doodle', label: 'Doodle Heart' },
+  { id: 'heart_double', label: 'Double Heart' },
+  { id: 'heart_sparkle', label: 'Sparkle Heart' },
+  { id: 'heart_arrow', label: 'Cupid Heart' },
+  { id: 'cherries', label: 'Cherries' },
   { id: 'discoball', label: 'Disco Ball' },
   { id: 'wings', label: 'Wings Heart' },
-  { id: 'cupid', label: 'Cupid Angel' },
   { id: 'swans', label: 'Swans Heart' },
-  { id: 'cherries', label: 'Cherries' },
-  { id: 'wine', label: 'Wine Bottle' },
-  { id: 'cocktail', label: 'Cocktail' },
   { id: 'xoxo', label: 'XOXO' },
 ];
 
@@ -329,29 +313,34 @@ const generateStickerDetails = (stickerId) => {
 function BackgroundDecorations() {
   return (
     <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-      <svg className="absolute w-24 h-24 left-[5%] top-[8%] opacity-35 stroke-[#E11D48] animate-float-slow" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      {/* Large Doodle Heart */}
+      <svg className="absolute w-24 h-24 left-[5%] top-[8%] opacity-25 stroke-[#E11D48] animate-float-slow" viewBox="0 0 100 100" fill="none" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M50,30 C45,15 20,15 15,35 C10,55 35,75 50,85 C65,75 90,55 85,35 C80,15 55,15 50,30 Z" />
       </svg>
-      <svg className="absolute w-16 h-16 left-[40%] top-[4%] opacity-30 stroke-[#E11D48] animate-float-medium" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M20.893 13.393l-1.135-1.135a2.25 2.25 0 01-2.25-2.25V7.5a2.25 2.25 0 00-2.25-2.25h-.75a2.25 2.25 0 00-2.25 2.25v2.508a2.25 2.25 0 01-2.25 2.25l-1.135 1.135" />
+      {/* Sparkle Star */}
+      <svg className="absolute w-16 h-16 left-[40%] top-[4%] opacity-20 stroke-[#E11D48] animate-float-medium" viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 3c.5 3.5 2.5 5.5 6 6-3.5.5-5.5 2.5-6 6-.5-3.5-2.5-5.5-6-6 3.5-.5 5.5-2.5 6-6z" />
       </svg>
-      <svg className="absolute w-20 h-20 left-[75%] top-[6%] opacity-35 stroke-[#E11D48] animate-float-fast" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M12 5a3 3 0 00-3 3M12 5a3 3 0 013 3M12 19a3 3 0 00-3-3M12 19a3 3 0 013-3M5 12a3 3 0 003-3M5 12a3 3 0 013 3M19 12a3 3 0 00-3-3M19 12a3 3 0 013 3" />
+      {/* 5-point Doodle Star */}
+      <svg className="absolute w-20 h-20 left-[75%] top-[6%] opacity-25 stroke-[#E11D48] animate-float-fast" viewBox="0 0 100 100" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M50,15 L62,38 L88,40 L68,58 L74,84 L50,70 L26,84 L32,58 L12,40 L38,38 Z" />
       </svg>
-      <svg className="absolute w-24 h-28 left-[3%] top-[45%] opacity-30 stroke-[#E11D48] animate-float-medium" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V9a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2z" />
+      {/* Double Doodle Heart */}
+      <svg className="absolute w-24 h-24 left-[3%] top-[45%] opacity-20 stroke-[#E11D48] animate-float-medium" viewBox="0 0 100 100" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M35,32 C30,18 12,18 8,36 C4,54 24,72 35,82 C46,72 66,54 62,36 C58,18 40,18 35,32 Z" />
+        <path d="M60,26 C56,15 42,15 38,28 C34,41 50,54 60,62 C70,54 86,41 82,28 C78,15 64,15 60,26 Z" strokeWidth="2.5" />
       </svg>
-      <svg className="absolute w-20 h-20 right-[5%] top-[40%] opacity-35 stroke-[#E11D48] animate-float-slow" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      {/* Sparkle Star */}
+      <svg className="absolute w-20 h-20 right-[5%] top-[40%] opacity-25 stroke-[#E11D48] animate-float-slow" viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 3c.5 3.5 2.5 5.5 6 6-3.5.5-5.5 2.5-6 6-.5-3.5-2.5-5.5-6-6 3.5-.5 5.5-2.5 6-6z" />
       </svg>
-      <svg className="absolute w-36 h-36 left-[4%] bottom-[5%] opacity-35 stroke-[#E11D48] animate-float-slow" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="4" />
-        <path d="M12 2a4 4 0 00-4 4v1a4 4 0 004-4zm0 20a4 4 0 00-4-4v-1a4 4 0 004 4zM2 12a4 4 0 004-4h1a4 4 0 00-4 4zm20 0a4 4 0 00-4-4h-1a4 4 0 004 4z" />
+      {/* Large Doodle Heart */}
+      <svg className="absolute w-32 h-32 left-[4%] bottom-[5%] opacity-25 stroke-[#E11D48] animate-float-slow" viewBox="0 0 100 100" fill="none" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M50,30 C45,15 20,15 15,35 C10,55 35,75 50,85 C65,75 90,55 85,35 C80,15 55,15 50,30 Z" />
       </svg>
-      <svg className="absolute w-28 h-28 right-[4%] bottom-[6%] opacity-35 stroke-[#E11D48] animate-float-fast" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="9" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h8m-4-4v8" />
+      {/* Sparkle Star */}
+      <svg className="absolute w-24 h-24 right-[4%] bottom-[6%] opacity-25 stroke-[#E11D48] animate-float-fast" viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 3c.5 3.5 2.5 5.5 6 6-3.5.5-5.5 2.5-6 6-.5-3.5-2.5-5.5-6-6 3.5-.5 5.5-2.5 6-6z" />
       </svg>
       <span className="absolute text-rose-500/20 text-xl left-[15%] top-[25%] animate-twinkle">✦</span>
       <span className="absolute text-rose-500/20 text-2xl left-[85%] top-[28%] animate-twinkle" style={{ animationDelay: '0.6s' }}>✦</span>
@@ -1204,17 +1193,6 @@ function App() {
 
               {/* Action buttons at bottom of panel */}
               <div className="self-stretch flex flex-col gap-3 w-full">
-                {/* Add sticker action */}
-                <button
-                  onClick={() => {
-                    const randSticker = FIGMA_STICKERS[Math.floor(Math.random() * FIGMA_STICKERS.length)];
-                    handleAddSticker(randSticker.id);
-                  }}
-                  className="self-stretch px-6 py-4 bg-rose-500 rounded-2xl shadow-[0px_6px_16px_0px_rgba(232,50,90,0.31)] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.13)] outline outline-[1.50px] outline-offset-[-1.50px] outline-rose-200 inline-flex justify-center items-center gap-2.5 hover:bg-rose-600 transition-colors uppercase text-white text-lg font-normal font-youngserif cursor-pointer"
-                >
-                  {t.addStickerBtn}
-                </button>
-
                 {/* Save Draft / Clear Draft */}
                 <div className="self-stretch inline-flex justify-start items-start gap-3">
                   <button
@@ -1244,7 +1222,7 @@ function App() {
                     const body = encodeURIComponent(`Greeting: ${greeting}\n\n${letterText}\n\nFrom, ${senderName}`);
                     window.location.href = `mailto:?subject=${subject}&body=${body}`;
                   }}
-                  className="self-stretch mt-3 px-6 py-4 bg-rose-500 rounded-2xl shadow-[0px_6px_16px_0px_rgba(232,50,90,0.31)] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.13)] outline outline-[1.50px] outline-offset-[-1.50px] outline-rose-200 inline-flex justify-center items-center gap-2.5 hover:bg-rose-600 transition-colors uppercase text-white text-lg font-normal font-youngserif cursor-pointer"
+                  className="self-stretch mt-2 px-5 py-3 bg-rose-500 rounded-xl shadow-[0px_4px_10px_0px_rgba(232,50,90,0.25)] border border-rose-400 flex justify-center items-center gap-2 hover:bg-rose-600 active:scale-98 transition-all uppercase text-white text-sm font-bold font-archivo tracking-widest cursor-pointer"
                 >
                   {t.sendEmailBtn || 'Send Email'}
                 </button>
