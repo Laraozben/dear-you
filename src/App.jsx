@@ -217,6 +217,7 @@ const TRANSLATIONS = {
     aboutUsLink: "About Us",
     privacyLink: "Privacy Policy",
     termsLink: "Terms of Service",
+    copyright: "© 2026 Dear You. All rights reserved.",
     aboutTitle: "About Dear You",
     aboutBody: "Dear You is a digital stationery shop with a physical soul. We believe that handwriting carries human connection. Our platform helps you customize digital cards with retro typography, custom-waxed seals, and line-drawn stickers, ready to be sent to your loved ones.",
     privacyTitle: "Privacy Policy",
@@ -283,6 +284,7 @@ const TRANSLATIONS = {
     aboutUsLink: "Hakkımızda",
     privacyLink: "Gizlilik Politikası",
     termsLink: "Kullanım Koşulları",
+    copyright: "© 2026 Dear You. Tüm hakları saklıdır.",
     aboutTitle: "Dear You Hakkında",
     aboutBody: "Dear You, fiziksel bir ruha sahip dijital bir kırtasiyedir. El yazısının samimi insan bağları taşıdığına inanıyoruz. Platformumuz, retro tipografi, özel balmumu mühürler ve el çizimi stickerlar ile sevdiklerinize gönderebileceğiniz mektuplar hazırlamanıza yardımcı olur.",
     privacyTitle: "Gizlilik Politikası",
@@ -660,12 +662,17 @@ function App() {
           </div>
 
           {/* Footer links */}
-          <footer className="mt-28 flex gap-6 text-xs font-black uppercase text-gray-500 font-archivo relative z-10">
-            <button onClick={() => setActiveModal('about')} className="hover:text-black cursor-pointer">{t.aboutUsLink}</button>
-            <span>•</span>
-            <button onClick={() => setActiveModal('privacy')} className="hover:text-black cursor-pointer">{t.privacyLink}</button>
-            <span>•</span>
-            <button onClick={() => setActiveModal('terms')} className="hover:text-black cursor-pointer">{t.termsLink}</button>
+          <footer className="mt-28 flex flex-col items-center gap-3 text-xs font-black uppercase text-gray-500 font-archivo relative z-10">
+            <div className="flex gap-6">
+              <button onClick={() => setActiveModal('about')} className="hover:text-black cursor-pointer">{t.aboutUsLink}</button>
+              <span>•</span>
+              <button onClick={() => setActiveModal('privacy')} className="hover:text-black cursor-pointer">{t.privacyLink}</button>
+              <span>•</span>
+              <button onClick={() => setActiveModal('terms')} className="hover:text-black cursor-pointer">{t.termsLink}</button>
+            </div>
+            <div className="text-gray-400 font-medium normal-case tracking-wider">
+              {t.copyright}
+            </div>
           </footer>
         </div>
       )}
